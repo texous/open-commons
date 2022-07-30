@@ -17,6 +17,11 @@ public interface BaseEnum {
      */
     String getDesc();
 
+    /**
+     * 获取名称
+     */
+    String name();
+
 
     default boolean eq(Integer code) {
         return this.getCode().equals(code);
