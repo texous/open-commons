@@ -47,4 +47,9 @@ public interface HeaderConstants {
      */
     String HEADER_APP_ID = "open-app-id";
 
+    /**
+     * 用户信息
+     */
+    String HEADER_TOKEN_INFO = "open-token-info";
+
 }
