@@ -55,6 +55,10 @@ public enum ResultCode implements Code {
      */
     DATA_EXPIRED_ERROR(400203, "Data Expired Error"),
     /**
+     * 方法未实现
+     */
+    METHOD_NOT_IMPLEMENTED_ERROR(400204, "Method Not Implemented Error"),
+    /**
      * LOCK 操作异常
      */
     LOCK_OPERATION_ERROR(400220, "Lock Operation Error"),
