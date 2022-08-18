@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.base;
 
+import cn.texous.open.base.commons.enums.HttpStatus;
 import cn.texous.open.base.commons.enums.ResultCode;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 
 /**
  * 权限异常
@@ -8,6 +10,7 @@ import cn.texous.open.base.commons.enums.ResultCode;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.FORBIDDEN)
 public class PermissionException extends BaseException {
 
     public PermissionException(String message) {

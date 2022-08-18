@@ -11,7 +11,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum StatusEnum implements BaseEnum {
+public enum AuditStatus implements BaseEnum {
 
     PENDING(0, "待办"),
     REJECT(1, "驳回"),

@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.transfer;
 
+import cn.texous.open.base.commons.enums.HttpStatus;
 import cn.texous.open.base.commons.enums.ResultCode;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 import cn.texous.open.base.commons.exception.base.BaseException;
 
 /**
@@ -9,6 +11,7 @@ import cn.texous.open.base.commons.exception.base.BaseException;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 public class StorageTransferException extends BaseException {
     private static final long serialVersionUID = 1320510593757496091L;
 

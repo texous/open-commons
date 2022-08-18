@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.base;
 
 import cn.texous.open.base.commons.enums.Code;
+import cn.texous.open.base.commons.enums.HttpStatus;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 
 /**
  * 业务异常
@@ -8,6 +10,7 @@ import cn.texous.open.base.commons.enums.Code;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.OK)
 public class BusinessException extends BaseException {
 
     private Object data;

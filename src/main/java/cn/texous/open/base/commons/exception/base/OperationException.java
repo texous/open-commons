@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.base;
 
+import cn.texous.open.base.commons.enums.HttpStatus;
 import cn.texous.open.base.commons.enums.ResultCode;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 
 /**
  * 操作异常
@@ -8,6 +10,7 @@ import cn.texous.open.base.commons.enums.ResultCode;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.BAD_REQUEST)
 public class OperationException extends BaseException {
 
     public OperationException(String message) {

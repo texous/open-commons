@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.operation;
 
+import cn.texous.open.base.commons.enums.HttpStatus;
 import cn.texous.open.base.commons.enums.ResultCode;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 import cn.texous.open.base.commons.exception.base.OperationException;
 
 /**
@@ -9,6 +11,7 @@ import cn.texous.open.base.commons.exception.base.OperationException;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.GONE)
 public class DataExpiredException extends OperationException {
 
     public DataExpiredException(String message) {

@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.validate;
 
+import cn.texous.open.base.commons.enums.HttpStatus;
 import cn.texous.open.base.commons.enums.ResultCode;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 import cn.texous.open.base.commons.exception.base.ValidateException;
 
 /**
@@ -9,6 +11,7 @@ import cn.texous.open.base.commons.exception.base.ValidateException;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.UNPROCESSABLE_ENTITY)
 public class ParamValidateException extends ValidateException {
 
     public ParamValidateException(String message) {

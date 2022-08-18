@@ -1,6 +1,8 @@
 package cn.texous.open.base.commons.exception.transfer;
 
+import cn.texous.open.base.commons.enums.HttpStatus;
 import cn.texous.open.base.commons.enums.ResultCode;
+import cn.texous.open.base.commons.exception.annotation.RespStatus;
 import cn.texous.open.base.commons.model.Result;
 import cn.texous.open.base.commons.exception.base.TransferException;
 
@@ -10,6 +12,7 @@ import cn.texous.open.base.commons.exception.base.TransferException;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@RespStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 public class FeignTransferException extends TransferException {
 
     public FeignTransferException(String message) {
