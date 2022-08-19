@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * insert description here
+ * 审核状态常量
  *
  * @author texousliu
  * @since 2022/7/30 12:21

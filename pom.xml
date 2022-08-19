@@ -6,7 +6,6 @@
         <groupId>cn.texous.open.base</groupId>
         <artifactId>open-spring-boot-parent</artifactId>
         <version>1.0.0</version>
-        <relativePath/>
     </parent>
     <artifactId>open-commons</artifactId>
     <name>open-commons</name>
