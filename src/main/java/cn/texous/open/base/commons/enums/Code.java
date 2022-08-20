@@ -13,7 +13,7 @@ public interface Code {
      *
      * @return code
      */
-    int getCode();
+    Integer getCode();
 
     /**
      * 获取msg

@@ -6,16 +6,7 @@ package cn.texous.open.base.commons.enums;
  * @author texousliu
  * @since 2022/7/30 11:42
  */
-public interface BaseEnum {
-    /**
-     * 获取枚举编码
-     */
-    Integer getCode();
-
-    /**
-     * 获取枚举描述
-     */
-    String getDesc();
+public interface BaseEnum extends Code {
 
     /**
      * 获取名称

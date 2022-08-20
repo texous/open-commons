@@ -12,7 +12,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum ResultCode implements Code {
+public enum ResultCode implements BaseEnum {
 
     /**
      * 成功
@@ -106,7 +106,7 @@ public enum ResultCode implements Code {
 
     ;
 
-    private final int code;
+    private final Integer code;
     private final String message;
 
 }

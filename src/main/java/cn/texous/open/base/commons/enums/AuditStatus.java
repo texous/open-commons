@@ -21,5 +21,5 @@ public enum AuditStatus implements BaseEnum {
         ;
 
     private final Integer code;
-    private final String desc;
+    private final String message;
 }

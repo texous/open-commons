@@ -21,11 +21,11 @@ public class OperationException extends BaseException {
         this(ResultCode.OPERATION_ERROR.getCode(), message, cause);
     }
 
-    public OperationException(int code, String message) {
+    public OperationException(Integer code, String message) {
         super(code, message);
     }
 
-    public OperationException(int code, String message, Throwable cause) {
+    public OperationException(Integer code, String message, Throwable cause) {
         super(code, message, cause);
     }
 

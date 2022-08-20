@@ -12,9 +12,9 @@ import cn.texous.open.base.commons.exception.annotation.RespStatus;
  * @since 20220-07-23 14:00:00
  */
 @RespStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-public class BaseException extends RuntimeException {
+public class BaseException extends RuntimeException implements Code {
 
-    protected int code = ResultCode.BASE_ERROR.getCode();
+    protected Integer code = ResultCode.BASE_ERROR.getCode();
 
     public BaseException() {
         super();
@@ -24,12 +24,12 @@ public class BaseException extends RuntimeException {
         this(code.getCode(), code.getMessage());
     }
 
-    public BaseException(int code, String message) {
+    public BaseException(Integer code, String message) {
         super(message);
         this.code = code;
     }
 
-    public BaseException(int code, String message, Throwable cause) {
+    public BaseException(Integer code, String message, Throwable cause) {
         super(message, cause);
         this.code = code;
     }
@@ -42,11 +42,16 @@ public class BaseException extends RuntimeException {
         super(message, cause);
     }
 
+    public BaseException(BaseException cause) {
+        super(cause.getMessage(), cause);
+        this.code = cause.getCode();
+    }
+
     public BaseException(Throwable cause) {
         super(cause);
     }
 
-    protected BaseException(int code,
+    protected BaseException(Integer code,
                             String message,
                             Throwable cause,
                             boolean enableSuppression,
@@ -62,7 +67,7 @@ public class BaseException extends RuntimeException {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 

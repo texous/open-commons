@@ -26,7 +26,7 @@ public enum BooleanEnum implements BaseEnum {
     private final Integer code;
     private final Boolean value;
     private final String valueStr;
-    private final String desc;
+    private final String message;
 
     public static Boolean isTrue(Integer code) {
         return !isFalse(code);
@@ -58,15 +58,15 @@ public enum BooleanEnum implements BaseEnum {
         return BooleanEnum.FALSE.getValueStr().equals(valueStr);
     }
 
-    public static Boolean isTrueDesc(String desc) {
-        return !isFalseDesc(desc);
+    public static Boolean isTrueMessage(String message) {
+        return !isFalseMessage(message);
     }
 
-    public static Boolean isFalseDesc(String desc) {
-        if (desc == null) {
+    public static Boolean isFalseMessage(String message) {
+        if (message == null) {
             return Boolean.FALSE;
         }
-        return BooleanEnum.FALSE.getDesc().equals(desc);
+        return BooleanEnum.FALSE.getMessage().equals(message);
     }
 
     public static BooleanEnum get(Integer code) {
@@ -90,11 +90,11 @@ public enum BooleanEnum implements BaseEnum {
         return BooleanEnum.FALSE.getValueStr().equals(valueStr) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
-    public static BooleanEnum getDesc(String desc) {
-        if (desc == null) {
+    public static BooleanEnum getMessage(String message) {
+        if (message == null) {
             return BooleanEnum.FALSE;
         }
-        return BooleanEnum.FALSE.getDesc().equals(desc) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
+        return BooleanEnum.FALSE.getMessage().equals(message) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
     public boolean eq(Boolean value) {
@@ -105,8 +105,8 @@ public enum BooleanEnum implements BaseEnum {
         return this.getValueStr().equals(valueStr);
     }
 
-    public boolean eqDesc(String desc) {
-        return this.getDesc().equals(desc);
+    public boolean eqMessage(String message) {
+        return this.getMessage().equals(message);
     }
 
 }

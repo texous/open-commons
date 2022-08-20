@@ -22,11 +22,11 @@ public class BusinessException extends BaseException {
         super(code);
     }
 
-    public BusinessException(int code, String message) {
+    public BusinessException(Integer code, String message) {
         super(code, message);
     }
 
-    public BusinessException(int code, String message, Throwable cause) {
+    public BusinessException(Integer code, String message, Throwable cause) {
         super(code, message, cause);
     }
 
@@ -42,7 +42,7 @@ public class BusinessException extends BaseException {
         super(cause);
     }
 
-    public BusinessException(int code, String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public BusinessException(Integer code, String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(code, message, cause, enableSuppression, writableStackTrace);
     }
 
@@ -54,13 +54,13 @@ public class BusinessException extends BaseException {
         this(code.getCode(), code.getMessage(), data);
     }
 
-    public BusinessException(int code, String message, Object data) {
+    public BusinessException(Integer code, String message, Object data) {
         super(code, message);
         this.data = data;
     }
 
     //
-    public BusinessException(int code, String message, Object data, Throwable cause) {
+    public BusinessException(Integer code, String message, Object data, Throwable cause) {
         super(code, message, cause);
         this.data = data;
     }

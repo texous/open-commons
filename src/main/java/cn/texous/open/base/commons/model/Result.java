@@ -18,7 +18,7 @@ public class Result<T> implements Serializable {
     /**
      * 返回状态, 200 = 成功, 其他 = 失败
      */
-    private int code;
+    private Integer code;
     /**
      * 请求响应信息
      */
@@ -35,7 +35,7 @@ public class Result<T> implements Serializable {
 
 
     public boolean isSuccess() {
-        return this.code == ResultCode.SUCCESS.getCode();
+        return ResultCode.SUCCESS.getCode().equals(code);
     }
 
     private void setSuccess(boolean success) {
@@ -45,12 +45,12 @@ public class Result<T> implements Serializable {
     public Result() {
     }
 
-    public Result(int code) {
+    public Result(Integer code) {
         this.code = code;
         this.data = null;
     }
 
-    public Result(int code, String message) {
+    public Result(Integer code, String message) {
         this.code = code;
         this.message = message;
         this.data = null;
@@ -60,12 +60,12 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
-    public Result(int code, T data) {
+    public Result(Integer code, T data) {
         this.code = code;
         this.data = data;
     }
 
-    public Result(int code, String message, T data) {
+    public Result(Integer code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -95,11 +95,11 @@ public class Result<T> implements Serializable {
         return new Result<>(ResultCode.BASE_ERROR.getCode(), message);
     }
 
-    public static Result<Void> error(int code, String message) {
+    public static Result<Void> error(Integer code, String message) {
         return new Result<>(code, message);
     }
 
-    public static <T> Result<T> error(int code, String message, T data) {
+    public static <T> Result<T> error(Integer code, String message, T data) {
         return new Result<>(code, message, data);
     }
 
