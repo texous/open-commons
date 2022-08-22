@@ -9,8 +9,7 @@
         <relativePath/>
     </parent>
     <artifactId>open-commons</artifactId>
-    <name>open-commons</name>
-    <description>open-commons</description>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <dependencies>
