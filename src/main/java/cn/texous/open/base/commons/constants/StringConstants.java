@@ -8,6 +8,7 @@ package cn.texous.open.base.commons.constants;
  */
 public final class StringConstants {
     public static final String AND = "and";
+    public static final String WITH = "&";
     public static final String AT = "@";
     public static final String ASTERISK = "*";
     public static final String WELL = "#";
