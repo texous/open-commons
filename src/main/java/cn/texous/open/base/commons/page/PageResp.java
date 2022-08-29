@@ -1,5 +1,7 @@
 package cn.texous.open.base.commons.page;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
  * @author texousliu
  * @since 20220-07-23 14:00:00
  */
+@Data
 public class PageResp<T> implements Serializable {
     /**
      * 查询数据列表
@@ -33,7 +36,7 @@ public class PageResp<T> implements Serializable {
     /**
      * 总页数
      */
-    protected long totalPage;
+    protected long pages;
     
     public PageResp(long current, long size) {
         this(current, size, 0);
@@ -49,7 +52,7 @@ public class PageResp<T> implements Serializable {
         this.size = size;
         this.total = total;
         this.records = records;
-        this.totalPage = (total + size - 1) / size;
+        this.pages = (total + size - 1) / size;
     }
 
 }
