@@ -2,6 +2,7 @@ package cn.texous.open.base.commons.model;
 
 import lombok.Data;
 
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -14,25 +15,9 @@ import java.util.Set;
 public class AccessToken {
 
     /**
-     * 用户id
-     */
-    private String userId;
-    /**
-     * 应用id
-     */
-    private String appId;
-    /**
-     * 租户id
-     */
-    private String tenantId;
-    /**
      * clientId
      */
     private String clientId;
-    /**
-     * 授权方式
-     */
-    private String grantType;
     /**
      * 授权范围
      */
@@ -42,12 +27,20 @@ public class AccessToken {
      */
     private String jti;
     /**
+     * 生效时间
+     */
+    private Long iat;
+    /**
      * 到期时间
      */
     private Long exp;
     /**
      * 有效时长
      */
-    private Long expireIn;
+    private Long expiresIn;
+    /**
+     * 附加信息
+     */
+    private Map<String, Object> additionalInformation;
 
 }
