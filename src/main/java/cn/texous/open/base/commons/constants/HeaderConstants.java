@@ -50,6 +50,16 @@ public interface HeaderConstants {
     /**
      * 用户信息
      */
+    String HEADER_USER_INFO = "open-user-info";
+
+    /**
+     * 授权信息
+     */
     String HEADER_TOKEN_INFO = "open-token-info";
+
+    /**
+     * 已登录账户标识
+     */
+    String HEADER_VERIFIED_ACCOUNT = "open-verified-account";
 
 }

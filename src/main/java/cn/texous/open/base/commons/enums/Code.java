@@ -22,4 +22,12 @@ public interface Code {
      */
     String getMessage();
 
+    default boolean eq(Integer code) {
+        return this.getCode().equals(code);
+    }
+
+    default boolean eqMessage(String message) {
+        return this.getMessage().equals(message);
+    }
+
 }

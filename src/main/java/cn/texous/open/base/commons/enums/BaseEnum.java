@@ -13,9 +13,8 @@ public interface BaseEnum extends Code {
      */
     String name();
 
-
-    default boolean eq(Integer code) {
-        return this.getCode().equals(code);
+    default boolean eqNameIgnoreCase(String name) {
+        return this.name().equals(name);
     }
 
 }

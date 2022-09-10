@@ -6,13 +6,15 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * AccessToken 信息
+ * Token 信息.
+ * <p>
+ * {@link cn.texous.open.base.commons.constants.HeaderConstants#HEADER_TOKEN_INFO}
  *
  * @author texousliu
  * @since 2022-08-06
  */
 @Data
-public class AccessToken {
+public class OpenToken {
 
     /**
      * clientId
