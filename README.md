@@ -4,6 +4,10 @@
 
 ## 迭代日志
 
+### 20220907
+
+- release 1.1.0
+
 ### 20220723
 
 - release 1.0.0
@@ -17,8 +21,6 @@
 <dependency>
     <groupId>cn.texous.open.base</groupId>
     <artifactId>open-commons</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
-
-## 常量列表
