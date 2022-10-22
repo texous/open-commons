@@ -1,17 +1,5 @@
 # open-commons
 
-基础常量定义
-
-## 迭代日志
-
-### 20220907
-
-- release 1.1.0
-
-### 20220723
-
-- release 1.0.0
-
 ## 使用方法
 
 ### 引入依赖包
@@ -21,6 +9,6 @@
 <dependency>
     <groupId>cn.texous.open.base</groupId>
     <artifactId>open-commons</artifactId>
-    <version>1.1.0</version>
+    <version>Latest Version</version>
 </dependency>
 ```
