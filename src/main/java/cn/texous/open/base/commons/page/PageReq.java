@@ -31,10 +31,6 @@ public class PageReq<T> implements Serializable {
      * 分页数量，每页查询数量
      */
     private long size = DEFAULT_SIZE;
-    /**
-     * 游标
-     */
-    private String cursor;
 
     /**
      * 查询数据列表

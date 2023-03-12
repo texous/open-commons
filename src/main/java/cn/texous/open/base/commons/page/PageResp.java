@@ -37,11 +37,6 @@ public class PageResp<T> implements Serializable {
      * 总页数
      */
     protected long pages;
-
-    /**
-     * 游标
-     */
-    protected String cursor;
     
     public PageResp(long current, long size) {
         this(current, size, 0);
