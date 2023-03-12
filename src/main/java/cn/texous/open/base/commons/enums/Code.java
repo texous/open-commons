@@ -1,5 +1,7 @@
 package cn.texous.open.base.commons.enums;
 
+import java.util.Objects;
+
 /**
  * 接口返状体枚举接口
  *
@@ -23,11 +25,11 @@ public interface Code {
     String getMessage();
 
     default boolean eq(Integer code) {
-        return this.getCode().equals(code);
+        return Objects.equals(code, this.getCode());
     }
 
     default boolean eqMessage(String message) {
-        return this.getMessage().equals(message);
+        return Objects.equals(message, this.getMessage());
     }
 
 }

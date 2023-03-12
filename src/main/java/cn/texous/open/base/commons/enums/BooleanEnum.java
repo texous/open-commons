@@ -3,13 +3,15 @@ package cn.texous.open.base.commons.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 
 /**
  * Boolean 枚举值.
  * <p>
- * true 类型：1、true、ignoreCase("true")、"是" <br/>
- * false 类型：非 true 类型都为 false
+ * false 类型：0、false、ignoreCase("false")、"否" <br/>
+ * true 类型：非 false 类型都为 true
  *
  * @author texousliu
  * @since 2022/7/30 11:44
@@ -28,97 +30,93 @@ public enum BooleanEnum implements BaseEnum {
     private final String message;
 
     public static Boolean isTrue(Integer code) {
-        return Optional.ofNullable(code)
-                .filter(TRUE::eq)
-                .map(True::get)
-                .orElse(Boolean.FALSE);
+        return !isFalse(code);
     }
 
     public static Boolean isFalse(Integer code) {
-        return !isTrue(code);
+        return Optional.ofNullable(code)
+                .filter(FALSE::eq)
+                .map(TRUE_RETURN)
+                .orElse(Boolean.FALSE);
     }
 
     public static Boolean isTrue(Boolean value) {
-        return Optional.ofNullable(value)
-                .filter(TRUE::eq)
-                .orElse(Boolean.FALSE);
+        return !isFalse(value);
     }
 
     public static Boolean isFalse(Boolean value) {
-        return !isTrue(value);
+        return Optional.ofNullable(value)
+                .filter(FALSE::eq)
+                .map(TRUE_RETURN)
+                .orElse(Boolean.FALSE);
     }
 
     public static Boolean isTrue(String valueStr) {
-        return Optional.ofNullable(valueStr)
-                .filter(TRUE::eq)
-                .map(True::get)
-                .orElse(Boolean.FALSE);
+        return !isFalse(valueStr);
     }
 
     public static Boolean isTrueIgnoreCase(String valueStr) {
-        return Optional.ofNullable(valueStr)
-                .filter(TRUE::eqIgnoreCase)
-                .map(True::get)
-                .orElse(Boolean.FALSE);
+        return !isFalseIgnoreCase(valueStr);
     }
 
     public static Boolean isFalse(String valueStr) {
-        return !isTrue(valueStr);
-    }
-
-    public static Boolean isFalseIgnoreCase(String valueStr) {
-        return !isTrueIgnoreCase(valueStr);
-    }
-
-    public static Boolean isTrueMessage(String message) {
-        return Optional.ofNullable(message)
-                .filter(TRUE::eqMessage)
-                .map(True::get)
+        return Optional.ofNullable(valueStr)
+                .filter(FALSE::eq)
+                .map(TRUE_RETURN)
                 .orElse(Boolean.FALSE);
     }
 
+    public static Boolean isFalseIgnoreCase(String valueStr) {
+        return Optional.ofNullable(valueStr)
+                .filter(FALSE::eqIgnoreCase)
+                .map(TRUE_RETURN)
+                .orElse(Boolean.FALSE);
+    }
+
+    public static Boolean isTrueMessage(String message) {
+        return !isFalseMessage(message);
+    }
+
     public static Boolean isFalseMessage(String message) {
-        return !isTrueMessage(message);
+        return Optional.ofNullable(message)
+                .filter(FALSE::eqMessage)
+                .map(TRUE_RETURN)
+                .orElse(Boolean.FALSE);
     }
 
     public static BooleanEnum get(Integer code) {
-        return isTrue(code) ? BooleanEnum.TRUE : BooleanEnum.FALSE;
+        return isFalse(code) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
     public static BooleanEnum get(Boolean value) {
-        return isTrue(value) ? BooleanEnum.TRUE : BooleanEnum.FALSE;
+        return isFalse(value) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
     public static BooleanEnum get(String valueStr) {
-        return isTrue(valueStr) ? BooleanEnum.TRUE : BooleanEnum.FALSE;
+        return isFalse(valueStr) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
     public static BooleanEnum getIgnoreCase(String valueStr) {
-        return isTrueIgnoreCase(valueStr) ? BooleanEnum.TRUE : BooleanEnum.FALSE;
+        return isFalseIgnoreCase(valueStr) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
-    public static BooleanEnum getMessage(String message) {
-        return isTrueMessage(message) ? BooleanEnum.TRUE : BooleanEnum.FALSE;
+    public static BooleanEnum getByMessage(String message) {
+        return isFalseMessage(message) ? BooleanEnum.FALSE : BooleanEnum.TRUE;
     }
 
     public boolean eq(Boolean value) {
-        return this.getValue().equals(value);
+        return Objects.equals(value, this.getValue());
     }
 
     public boolean eq(String valueStr) {
-        return this.getValueStr().equals(valueStr);
+        return Objects.equals(valueStr, this.getValueStr());
     }
 
     public boolean eqIgnoreCase(String valueStr) {
-        return this.getValueStr().equalsIgnoreCase(valueStr);
+        return (this.getValueStr() == null && valueStr == null)
+                || (valueStr != null && valueStr.equalsIgnoreCase(this.getValueStr()));
     }
 
-    private static final class True {
-
-        public static Boolean get(Object o) {
-            return Boolean.TRUE;
-        }
-
-    }
+    private static final Function<Object, Boolean> TRUE_RETURN = (o) -> Boolean.TRUE;
 
 }

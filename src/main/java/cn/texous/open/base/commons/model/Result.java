@@ -28,18 +28,8 @@ public class Result<T> implements Serializable {
      */
     private T data;
 
-    /**
-     * 使用字段来禁用 success 序列化
-     */
-    private transient boolean success;
-
-
-    public boolean isSuccess() {
+    public Boolean success() {
         return ResultCode.SUCCESS.getCode().equals(code);
-    }
-
-    private void setSuccess(boolean success) {
-        this.success = success;
     }
 
     public Result() {

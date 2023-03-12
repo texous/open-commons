@@ -1,5 +1,7 @@
 package cn.texous.open.base.commons.enums;
 
+import java.util.Objects;
+
 /**
  * 自定义枚举基类
  *
@@ -13,8 +15,12 @@ public interface BaseEnum extends Code {
      */
     String name();
 
+    default boolean eqName(String name) {
+        return Objects.equals(this.name(), name);
+    }
+
     default boolean eqNameIgnoreCase(String name) {
-        return this.name().equals(name);
+        return (this.name() == null && name == null) || (name != null && name.equalsIgnoreCase(this.name()));
     }
 
 }
