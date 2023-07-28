@@ -18,7 +18,7 @@ public enum AuditStatus implements BaseEnum {
     APPROVE(2, "同意"),
     CANCEL(3, "取消"),
     INVALID(4, "失效"),
-        ;
+    ;
 
     private final Integer code;
     private final String message;

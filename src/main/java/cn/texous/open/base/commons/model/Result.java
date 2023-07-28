@@ -61,6 +61,21 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
+    public Result<T> code(Integer code) {
+        this.code = code;
+        return this;
+    }
+
+    public Result<T> message(String message) {
+        this.message = message;
+        return this;
+    }
+
+    public Result<T> data(T data) {
+        this.data = data;
+        return this;
+    }
+
     public static Result<Void> ok() {
         return new Result<>(ResultCode.SUCCESS.getCode());
     }
